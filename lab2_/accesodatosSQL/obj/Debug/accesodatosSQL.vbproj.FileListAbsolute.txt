@@ -1,0 +1,8 @@
+C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\accesodatosSQL\bin\Debug\accesodatosSQL.dll
+C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\accesodatosSQL\bin\Debug\accesodatosSQL.pdb
+C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\accesodatosSQL\bin\Debug\accesodatosSQL.xml
+C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\accesodatosSQL\obj\Debug\accesodatosSQL.Resources.resources
+C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\accesodatosSQL\obj\Debug\accesodatosSQL.vbproj.GenerateResource.Cache
+C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\accesodatosSQL\obj\Debug\accesodatosSQL.dll
+C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\accesodatosSQL\obj\Debug\accesodatosSQL.xml
+C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\accesodatosSQL\obj\Debug\accesodatosSQL.pdb

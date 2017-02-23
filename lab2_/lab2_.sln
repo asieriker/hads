@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "lab2_", "lab2_\lab2_.vbproj", "{B3865AFC-E552-4B99-A2AA-FB00F8D84ACB}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "accesodatosSQL", "accesodatosSQL\accesodatosSQL.vbproj", "{7B5EDF2F-8D4D-4090-A0BD-EA1F820F323E}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://hads11.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = lab2_\\lab2_.vbproj
+		SccProjectName1 = lab2_
+		SccLocalPath1 = lab2_
+		SccProjectUniqueName2 = accesodatosSQL\\accesodatosSQL.vbproj
+		SccProjectName2 = accesodatosSQL
+		SccLocalPath2 = accesodatosSQL
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B3865AFC-E552-4B99-A2AA-FB00F8D84ACB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3865AFC-E552-4B99-A2AA-FB00F8D84ACB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3865AFC-E552-4B99-A2AA-FB00F8D84ACB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3865AFC-E552-4B99-A2AA-FB00F8D84ACB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B5EDF2F-8D4D-4090-A0BD-EA1F820F323E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B5EDF2F-8D4D-4090-A0BD-EA1F820F323E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B5EDF2F-8D4D-4090-A0BD-EA1F820F323E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B5EDF2F-8D4D-4090-A0BD-EA1F820F323E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

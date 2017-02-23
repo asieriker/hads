@@ -1,0 +1,12 @@
+C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\lab2_\bin\lab2_.dll
+C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\lab2_\bin\lab2_.pdb
+C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\lab2_\bin\lab2_.xml
+C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\lab2_\bin\accesodatosSQL.dll
+C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\lab2_\bin\accesodatosSQL.pdb
+C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\lab2_\bin\accesodatosSQL.xml
+C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\lab2_\obj\Release\lab2_.vbprojResolveAssemblyReference.cache
+C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\lab2_\obj\Release\lab2_.Resources.resources
+C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\lab2_\obj\Release\lab2_.vbproj.GenerateResource.Cache
+C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\lab2_\obj\Release\lab2_.dll
+C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\lab2_\obj\Release\lab2_.xml
+C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\lab2_\obj\Release\lab2_.pdb
