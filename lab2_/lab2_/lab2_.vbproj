@@ -53,6 +53,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web.DynamicData" />
@@ -89,22 +90,43 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Alumno.aspx" />
     <Content Include="Aplicacion.aspx" />
     <Content Include="audios\tieneunnuevofs.wav" />
     <Content Include="CambiarPassword.aspx" />
     <Content Include="conexionBD.aspx" />
     <Content Include="Confirmar.aspx" />
+    <Content Include="Estadisticas.aspx" />
     <Content Include="imagenes\521cd1a5e0175.jpg" />
+    <Content Include="imagenes\boeken.png" />
     <Content Include="imagenes\giphy.gif" />
     <Content Include="imagenes\ignasi_pattern_s.png" />
+    <Content Include="imagenes\libros.gif" />
     <Content Include="imagenes\return-button-png-26.png" />
+    <Content Include="imagenes\rsz_boeken.png" />
+    <Content Include="imagenes\rsz_icon3.png" />
+    <Content Include="imagenes\rsz_social.png" />
+    <Content Include="imagenes\rsz_tareas.png" />
+    <Content Include="imagenes\Social.png" />
+    <Content Include="imagenes\Tareas.png" />
     <Content Include="Inicio.aspx" />
+    <Content Include="InsertarTarea.aspx" />
+    <Content Include="InstanciarTarea.aspx" />
+    <Content Include="Profesor.aspx" />
     <Content Include="Registro.aspx" />
     <Content Include="StyleSheet1.css" />
+    <Content Include="TareasAlumnos.aspx" />
+    <Content Include="TareasProfesor.aspx" />
     <Content Include="Web.config" />
-    <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alumno.aspx.designer.vb">
+      <DependentUpon>Alumno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Alumno.aspx.vb">
+      <DependentUpon>Alumno.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Aplicacion.aspx.designer.vb">
       <DependentUpon>Aplicacion.aspx</DependentUpon>
     </Compile>
@@ -133,11 +155,32 @@
       <DependentUpon>Confirmar.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="Estadisticas.aspx.designer.vb">
+      <DependentUpon>Estadisticas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas.aspx.vb">
+      <DependentUpon>Estadisticas.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Inicio.aspx.designer.vb">
       <DependentUpon>Inicio.aspx</DependentUpon>
     </Compile>
     <Compile Include="Inicio.aspx.vb">
       <DependentUpon>Inicio.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="InsertarTarea.aspx.designer.vb">
+      <DependentUpon>InsertarTarea.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InsertarTarea.aspx.vb">
+      <DependentUpon>InsertarTarea.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="InstanciarTarea.aspx.designer.vb">
+      <DependentUpon>InstanciarTarea.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InstanciarTarea.aspx.vb">
+      <DependentUpon>InstanciarTarea.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -159,6 +202,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Profesor.aspx.designer.vb">
+      <DependentUpon>Profesor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profesor.aspx.vb">
+      <DependentUpon>Profesor.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Registro.aspx.designer.vb">
       <DependentUpon>Registro.aspx</DependentUpon>
     </Compile>
@@ -166,11 +216,18 @@
       <DependentUpon>Registro.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="WebForm1.aspx.designer.vb">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
+    <Compile Include="TareasAlumnos.aspx.designer.vb">
+      <DependentUpon>TareasAlumnos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm1.aspx.vb">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
+    <Compile Include="TareasAlumnos.aspx.vb">
+      <DependentUpon>TareasAlumnos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="TareasProfesor.aspx.designer.vb">
+      <DependentUpon>TareasProfesor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TareasProfesor.aspx.vb">
+      <DependentUpon>TareasProfesor.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
   </ItemGroup>
@@ -203,6 +260,10 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="alumno\" />
+    <Folder Include="profesor\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

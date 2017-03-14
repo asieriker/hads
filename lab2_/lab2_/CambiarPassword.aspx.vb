@@ -17,6 +17,8 @@ Public Class CambiarPassword
                 respuesta.Enabled = True
                 password1.Enabled = True
                 password2.Enabled = True
+                CompareValidator1.Enabled = True
+                RegularExpressionValidator2.Enabled = True
             End If
         End If
         cerrarconexion()
@@ -25,7 +27,7 @@ Public Class CambiarPassword
     Protected Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Dim result As String
         result = conectar()
-        If actualizarPassword(mail.Text, password1.Text) Then
+        If actualizarPassword(mail.Text, password1.Text) = 1 Then
             Label3.Text = "Password CambiADO.NET"
         End If
         cerrarconexion()

@@ -8,12 +8,26 @@ Public Class Inicio
 
     Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim result As String
+        cerrarconexion()
+
         result = conectar()
+        If result.ToString <> "CONEXION OK" Then
+            Label1.Text = "Error db" + result
+            Exit Sub
+        End If
         result = loginUsuario(Usuario.Text, password.Text)
-        If result = 1 Then
-            Response.Redirect("http://hads11asik.azurewebsites.net/aplicacion.aspx")
+        If result = "P" Then
+            cerrarconexion()
+            Session.Contents("email") = Usuario.Text
+            Response.Redirect("http://hads11asik.azurewebsites.net/Profesor.aspx")
+
+        ElseIf result = "A" Then
+            cerrarconexion()
+            Session.Contents("email") = Usuario.Text
+            Response.Redirect("http://hads11asik.azurewebsites.net/Alumno.aspx")
+
         Else
-            Response.Redirect("http://hads11asik.azurewebsites.net/inicio.aspx")
+            Label1.Text = "Datos de acceso incorrectos"
         End If
         cerrarconexion()
     End Sub

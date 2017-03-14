@@ -4,10 +4,13 @@ Imports System.Net.Mail
 Public Class accesodatosSQL
     Private Shared conexion As New SqlConnection
     Private Shared comando As New SqlCommand
+    Private Shared comando2 As New SqlCommand
+
     Public Shared Function conectar() As String
         Try
             'conexion.ConnectionString = "Data Source=158.227.106.20;Initial Catalog=HADS11_Usuarios;User ID=HADS11;Password=orca"
-            conexion.ConnectionString = "Server=tcp:hads11asik.database.windows.net,1433;Initial Catalog=HADS11_Usuarios;Persist Security Info=False;User ID=asik9692@hads11asik;Password=Quepazaloko23;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
+            'conexion.ConnectionString = "Server=tcp:hads11asik.database.windows.net,1433;Initial Catalog=HADS11_Usuarios;Persist Security Info=False;User ID=asik9692@hads11asik;Password=Quepazaloko23;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
+            conexion.ConnectionString = "Server=tcp:servidorhads11.database.windows.net,1433;Initial Catalog=HADS11_Tareas;Persist Security Info=False;User ID=asik9692@servidorhads11;Password=Quepazaloko23;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
 
             conexion.Open()
         Catch ex As Exception
@@ -23,7 +26,8 @@ Public Class accesodatosSQL
         Dim numConfir As Integer
         Randomize()
         numConfir = CLng(Rnd() * 9000000) + 1000000
-        Dim st = "insert into Usuarios (email,nombre,apellidos,pregunta,respuesta,dni,numconfir,confirmado,pass)  values ('" & email & " ', '" & nombre & " ', '" & apellidos & " ', '" & pregunta & " ', '" & respuesta & " ', '" & dni & " ', '" & numConfir & " ', 0, '" & pass & " ')"
+        'Dim st = "insert into Usuarios (email,nombre,apellidos,pregunta,respuesta,dni,numconfir,confirmado,pass)  values ('" & email & " ', '" & nombre & " ', '" & apellidos & " ', '" & pregunta & " ', '" & respuesta & " ', '" & dni & " ', '" & numConfir & " ', 0, '" & pass & " ')"
+        Dim st = "insert into Usuarios (email,nombre,pregunta,respuesta,dni,confirmado,pass)  values ('" & email & " ', '" & nombre & " ', '" & pregunta & " ', '" & respuesta & " ', '" & "78969585" & " ', 0, '" & pass & " ')"
         Dim numregs As Integer
         comando = New SqlCommand(st, conexion)
         Try
@@ -72,11 +76,26 @@ Public Class accesodatosSQL
     End Function
 
     Public Shared Function loginUsuario(ByVal email As String, ByVal pass As String) As String
-        Dim st = "select count(*) from Usuarios WHERE email='" & email.ToString & "' and pass='" + pass.ToString & "' and confirmado=0"
+        Dim st = "select count(*) from Usuarios WHERE email='" & email.ToString & "' and pass='" + pass.ToString & "' and confirmado=1" & " and tipo='P'"
+        Dim st2 = "select count(*) from Usuarios WHERE email='" & email.ToString & "' and pass='" + pass.ToString & "' and confirmado=1" & " and tipo='A'"
+
         Dim numregs As Integer
+        Dim numregs2 As Integer
+
         comando = New SqlCommand(st, conexion)
         numregs = comando.ExecuteScalar()
-        Return numregs
+
+        comando2 = New SqlCommand(st2, conexion)
+        numregs2 = comando2.ExecuteScalar()
+
+        If numregs = 1 Then
+
+            Return "P"
+        ElseIf numregs2 = 1 Then
+            Return "A"
+        Else
+            Return "0"
+        End If
     End Function
 
     Public Shared Function confirmarUsuario(ByVal email As String, ByVal numConfir As Integer) As String
@@ -110,8 +129,6 @@ Public Class accesodatosSQL
         R.Close()
         Return s
     End Function
-
-
     Public Shared Function actualizarPassword(ByVal email As String, ByVal pass As String) As String
         Dim st = "select count(*) from Usuarios WHERE email='" & email.ToString & "'"
         Dim numregs As Integer
@@ -126,4 +143,56 @@ Public Class accesodatosSQL
     End Function
 
 
+    Public Shared Function getTareasGenericas(ByVal codAsig As String, ByVal email As String) As DataSet
+        conexion.ConnectionString = "Server=tcp:servidorhads11.database.windows.net,1433;Initial Catalog=HADS11_Tareas;Persist Security Info=False;User ID=asik9692@servidorhads11;Password=Quepazaloko23;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
+        Dim dstTgs = New DataSet()
+        Dim dapTgs As New SqlDataAdapter()
+        Dim st = "SELECT DISTINCT T.Codigo,T.Descripcion,T.HEstimadas,T.TipoTarea FROM Usuarios AS U, TareasGenericas AS T, EstudiantesTareas AS E WHERE T.CodAsig='" & codAsig & "' AND T.Explotacion=1 AND T.Codigo NOT IN(Select ET.CodTarea FROM EstudiantesTareas AS ET WHERE ET.CodTarea=T.Codigo AND ET.email='" & email & "')"
+        dapTgs = New SqlDataAdapter(st, conexion)
+        dapTgs.Fill(dstTgs, "Tareas")
+        Return dstTgs
+    End Function
+
+    Public Shared Function getAsignaturasAlumno(ByVal email As String) As DataSet
+        conexion.ConnectionString = "Server=tcp:servidorhads11.database.windows.net,1433;Initial Catalog=HADS11_Tareas;Persist Security Info=False;User ID=asik9692@servidorhads11;Password=Quepazaloko23;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
+        Dim dstAsigs = New DataSet()
+        Dim dapAsigs As New SqlDataAdapter()
+        Dim st = "SELECT DISTINCT A.codigo FROM Usuarios AS U, Asignaturas AS A, GruposClase AS G, EstudiantesGrupo AS EG WHERE U.email='" & email & "' AND G.codigoasig=A.codigo AND U.email=EG.Email AND EG.Grupo=G.codigo"
+        dapAsigs = New SqlDataAdapter(st, conexion)
+        dapAsigs.Fill(dstAsigs, "Asignaturas")
+        Return dstAsigs
+    End Function
+    Public Shared Function getTareaInstanciada(ByVal codTarea) As DataSet
+        conexion.ConnectionString = "Server=tcp:servidorhads11.database.windows.net,1433;Initial Catalog=HADS11_Tareas;Persist Security Info=False;User ID=asik9692@servidorhads11;Password=Quepazaloko23;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
+        Dim dstTarea = New DataSet()
+        Dim dapTarea As New SqlDataAdapter()
+        Dim st = "SELECT *  FROM TareasGenericas AS T WHERE T.Codigo='" & codTarea & "'"
+        dapTarea = New SqlDataAdapter(st, conexion)
+        dapTarea.Fill(dstTarea, "Tarea")
+        Return dstTarea
+    End Function
+    Public Shared Function getTareasEstudiante(ByVal email As String) As DataSet
+        conexion.ConnectionString = "Server=tcp:servidorhads11.database.windows.net,1433;Initial Catalog=HADS11_Tareas;Persist Security Info=False;User ID=asik9692@servidorhads11;Password=Quepazaloko23;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
+        Dim dstTes = New DataSet()
+        Dim dapTes As New SqlDataAdapter()
+        Dim st = "SELECT * FROM EstudiantesTareas AS ET WHERE ET.email='" & email & "'"
+        dapTes = New SqlDataAdapter(st, conexion)
+        dapTes.Fill(dstTes, "TareasEstudiante")
+        Return dstTes
+    End Function
+    Public Shared Function instanciarTareaDB(ByVal email As String, ByVal codTarea As String, ByVal Hest As String, ByVal Hreal As String)
+        'conexion.ConnectionString = "Server=tcp:servidorhads11.database.windows.net,1433;Initial Catalog=HADS11_Tareas;Persist Security Info=False;User ID=asik9692@servidorhads11;Password=Quepazaloko23;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
+        conectar()
+        Dim st = "INSERT INTO EstudiantesTareas VALUES('" & email & " ', '" & codTarea & " ', '" & Hest & " ', '" & Hreal & "')"
+        Dim numregs As Integer
+        comando = New SqlCommand(st, conexion)
+        Try
+            numregs = comando.ExecuteNonQuery()
+        Catch ex As Exception
+            cerrarconexion()
+            Return "," + ex.Message
+        End Try
+        cerrarconexion()
+        Return (numregs & " Tarea Instanciada ")
+    End Function
 End Class

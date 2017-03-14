@@ -1,2 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters />
+<parameters>
+  <parameter name="HADS11_TareasConnectionString-Web.config Connection String" description="HADS11_TareasConnectionString Cadena de conexión que usa la aplicación en web.config para obtener acceso a la base de datos." defaultValue="Data Source=tcp:servidorhads11.database.windows.net,1433;Initial Catalog=HADS11_Tareas;Persist Security Info=True;User ID=asik9692@servidorhads11;Password=Quepazaloko23" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\iker5\\Desktop\\2CUATRI\\HADS\\lab2\\lab2_\\lab2_\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='HADS11_TareasConnectionString']/@connectionString" />
+  </parameter>
+</parameters>

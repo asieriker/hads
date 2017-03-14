@@ -36,11 +36,11 @@
         Nueva contraseña:&nbsp;
         <asp:TextBox ID="password1" runat="server" Enabled="False" TextMode="Password" Width="160px" ValidationGroup="B"></asp:TextBox>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="password1" ErrorMessage="*" ForeColor="Red" ValidationGroup="B"></asp:RequiredFieldValidator>
-&nbsp;<asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="password1" ErrorMessage="ehhh que noo!! te has confundADO.NET" ForeColor="Red" ValidationExpression="^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ0-9!@#\$%\^&amp;\*\?_~\/]{4,20}$"></asp:RegularExpressionValidator>
+&nbsp;<asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="password1" ErrorMessage="ehhh que noo!! te has confundADO.NET" ForeColor="Red" ValidationExpression="^(?=.{8,15}$)(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&amp;*]).*" ValidationGroup="B"></asp:RegularExpressionValidator>
         &nbsp;&nbsp;&nbsp; Repetir contraseña:&nbsp;&nbsp;
         <asp:TextBox ID="password2" runat="server" Enabled="False" TextMode="Password" Width="171px" ValidationGroup="B"></asp:TextBox>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="password2" ErrorMessage="*" ForeColor="Red" ValidationGroup="B"></asp:RequiredFieldValidator>
-        <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="password1" ControlToValidate="password2" ErrorMessage="Las contraseñas no coinciden" ForeColor="Red"></asp:CompareValidator>
+        <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="password1" ControlToValidate="password2" ErrorMessage="Las contraseñas no coinciden" ForeColor="Red" ValueToCompare="B"></asp:CompareValidator>
         <br />
         <br />
         <br />
