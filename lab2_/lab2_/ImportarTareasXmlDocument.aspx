@@ -57,6 +57,8 @@
         <asp:Label ID="Label3" runat="server"></asp:Label>
         <br />
         <br />
+        <asp:GridView ID="GridView1" runat="server" style="z-index: 1; left: 461px; top: 216px; position: absolute; height: 133px; width: 187px">
+        </asp:GridView>
         <br />
         <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/Profesor.aspx">Volver</asp:LinkButton>
     </form>

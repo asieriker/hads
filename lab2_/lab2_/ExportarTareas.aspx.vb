@@ -51,7 +51,7 @@ Public Class ExportarTareas
         Label1.Text = resultJEISON
 
         Dim path As String = Server.MapPath("App_Data/" & DropDownList1.SelectedValue & ".json") '"c:\temp\MyTest.txt"  
-        Dim pathLOCAL As String = "C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\lab2_\App_Data\" & DropDownList1.SelectedValue & ".json"
+        Dim pathLOCAL As String = "C:\Users\Asier\Source\Workspaces\Área de trabajo\HADS\lab2_\lab2_\App_Data\" & DropDownList1.SelectedValue & ".json"
         ' Create or overwrite the file.
         Dim fs As FileStream = File.Create(pathLOCAL) 'OJOOOOOOOOO
 
@@ -61,7 +61,7 @@ Public Class ExportarTareas
         fs.Close()
         Label1.Text = Server.MapPath("App_Data/" & DropDownList1.SelectedValue & ".json")
         Dim fileReader As String
-        fileReader = My.Computer.FileSystem.ReadAllText(Server.MapPath("App_Data/" & DropDownList1.SelectedValue & ".json"))
+        fileReader = My.Computer.FileSystem.ReadAllText("C:\Users\Asier\Source\Workspaces\Área de trabajo\HADS\lab2_\lab2_\App_Data\" & DropDownList1.SelectedValue & ".json")
         Label1.Text = fileReader
     End Sub
 End Class

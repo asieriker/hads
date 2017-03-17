@@ -60,12 +60,31 @@ Public Class ImportarTareasXmlDocument
     End Sub
 
     Protected Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Dim xmldata As DataSet = New DataSet()
         Dim dataSetTgs As New DataSet
         Dim dapTgs As New SqlDataAdapter
         dataSetTgs = Session("dataSetTgs")
         dapTgs = Session("dataAdapterTgs")
         Try
-            dataSetTgs.ReadXml(Server.MapPath("App_Data/" & DropDownList1.SelectedValue & ".xml"))
+            Dim table As DataTable = New DataTable()
+            Dim newColumn As New Data.DataColumn("CodAsig", GetType(System.String))
+            newColumn.DefaultValue = DropDownList1.SelectedValue
+            xmldata.ReadXml(Server.MapPath("App_Data/" & DropDownList1.SelectedValue & ".xml"))
+            table = xmldata.Tables(0)
+            table.Columns.Add(newColumn)
+            Dim oldtable As DataTable = New DataTable()
+            oldtable = dataSetTgs.Tables(0)
+            For Each tarea In table.Rows
+                Dim row As DataRow
+                row = oldtable.NewRow()
+                row("codigo") = tarea(0).ToString
+                row("descripcion") = tarea(1).ToString
+                row("codasig") = tarea(5).ToString
+                row("hestimadas") = Convert.ToInt32(tarea(2).ToString)
+                row("explotacion") = tarea(3).ToString
+                row("tipotarea") = tarea(4).ToString
+                oldtable.Rows.Add(row)
+            Next
             dapTgs.Update(dataSetTgs, "TareasGenericas")
             dataSetTgs.AcceptChanges()
             Label3.Text = "Importado correctamente"
