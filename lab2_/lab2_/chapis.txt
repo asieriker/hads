@@ -1,0 +1,18 @@
+﻿Authors -> dim doc as XmlNode = docxml.DocumentElement
+	Author -> nodo de tipo element
+		Matthew Gambardella -> nodo de tipo text
+
+
+		xmldocument o reader no sabemos  ¯\_(ツ)_/¯ no tiene get element by tag name, lo usaremos para insercciones, borraciones etc. (chekiar metodos en pp)
+
+		todos los creates se hacen en el XmlDocument y luego juntarlos con el appendchild
+
+
+
+		Guardamos el dataset para luego hacer dataset.WriteXml()
+
+		Reader settings es para indicarle dnd sta el eskema el spacio de nombres tiene q coincidir con el squema de nosmbres
+		el while vacio lee y si se dispara error, el handler con el metodo error validacion q creamos q siemplemente saca un errror escirbe el rror 
+		en pantalla0
+
+		xslt es para transformar shits en otras shits. Son instrucciones escritas en cn XML

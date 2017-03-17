@@ -6,12 +6,13 @@
 <head id="Head1" runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+    <link href="StyleSheet1.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <form id="form1" runat="server">
     <div>
     
-        <asp:Panel ID="Panel1" runat="server" BackColor="#FF9999" Font-Size="Large" ForeColor="Black" Height="79px" HorizontalAlign="Center">
+        <asp:Panel ID="Panel1" runat="server" BackColor="#FFCC66" Font-Size="Large" ForeColor="Black" Height="79px" HorizontalAlign="Center" Font-Bold="True">
             PROFESOR<br />
             <br />
             GESTIÓN DE TAREAS GENÉRICAS</asp:Panel>
@@ -19,27 +20,27 @@
     </div>
         <p>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Label ID="Label1" runat="server" Text="Código"></asp:Label>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Label ID="Label1" runat="server" Text="Código" Font-Bold="True"></asp:Label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:TextBox ID="TextBox1" runat="server" Height="16px" Width="149px"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox1" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
         </p>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Label ID="Label2" runat="server" Text="Descripción"></asp:Label>
+        <asp:Label ID="Label2" runat="server" Text="Descripción" Font-Bold="True"></asp:Label>
 &nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="TextBox2" runat="server" Height="52px" Width="488px"></asp:TextBox>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox2" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
         <br />
         <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Label ID="Label3" runat="server" Text="Asignatura"></asp:Label>
+        <asp:Label ID="Label3" runat="server" Text="Asignatura" Font-Bold="True"></asp:Label>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:DropDownList ID="DropDownList1" runat="server" BackColor="#FFCC66" Height="33px" Width="106px" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="Codigo" DataValueField="Codigo">
             </asp:DropDownList>
         <br />
         <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Label ID="Label5" runat="server" Text="Horas Est."></asp:Label>
+        <asp:Label ID="Label5" runat="server" Text="Horas Est." Font-Bold="True"></asp:Label>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextBox3" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -52,9 +53,9 @@
         </asp:SqlDataSource>
         <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Label ID="Label4" runat="server" Text="Tipo Tarea"></asp:Label>
+        <asp:Label ID="Label4" runat="server" Text="Tipo Tarea" Font-Bold="True"></asp:Label>
 &nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:DropDownList ID="DropDownList2" runat="server" Height="18px" Width="97px">
+        <asp:DropDownList ID="DropDownList2" runat="server" Height="18px" Width="97px" BackColor="#FFCC66">
             <asp:ListItem>Ejercicio</asp:ListItem>
             <asp:ListItem>Examen</asp:ListItem>
             <asp:ListItem>Laboratorio</asp:ListItem>

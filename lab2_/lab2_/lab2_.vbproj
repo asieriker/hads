@@ -48,6 +48,16 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\accesodatosSQL\bin\Debug\accesodatosSQL.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -92,23 +102,31 @@
   <ItemGroup>
     <Content Include="Alumno.aspx" />
     <Content Include="Aplicacion.aspx" />
+    <Content Include="App_Data\HAS.xml" />
+    <Content Include="App_Data\SEG.xml" />
+    <Content Include="App_Data\XSLTFile.xsl" />
     <Content Include="audios\tieneunnuevofs.wav" />
     <Content Include="CambiarPassword.aspx" />
     <Content Include="conexionBD.aspx" />
     <Content Include="Confirmar.aspx" />
     <Content Include="Estadisticas.aspx" />
+    <Content Include="ExportarTareas.aspx" />
     <Content Include="imagenes\521cd1a5e0175.jpg" />
     <Content Include="imagenes\boeken.png" />
     <Content Include="imagenes\giphy.gif" />
     <Content Include="imagenes\ignasi_pattern_s.png" />
     <Content Include="imagenes\libros.gif" />
     <Content Include="imagenes\return-button-png-26.png" />
+    <Content Include="imagenes\rsz_1xml.png" />
     <Content Include="imagenes\rsz_boeken.png" />
     <Content Include="imagenes\rsz_icon3.png" />
     <Content Include="imagenes\rsz_social.png" />
     <Content Include="imagenes\rsz_tareas.png" />
+    <Content Include="imagenes\school.png" />
     <Content Include="imagenes\Social.png" />
     <Content Include="imagenes\Tareas.png" />
+    <Content Include="Importar.aspx" />
+    <Content Include="ImportarTareasXmlDocument.aspx" />
     <Content Include="Inicio.aspx" />
     <Content Include="InsertarTarea.aspx" />
     <Content Include="InstanciarTarea.aspx" />
@@ -117,6 +135,7 @@
     <Content Include="StyleSheet1.css" />
     <Content Include="TareasAlumnos.aspx" />
     <Content Include="TareasProfesor.aspx" />
+    <Content Include="chapis.txt" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -160,6 +179,27 @@
     </Compile>
     <Compile Include="Estadisticas.aspx.vb">
       <DependentUpon>Estadisticas.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="ExportarTareas.aspx.designer.vb">
+      <DependentUpon>ExportarTareas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExportarTareas.aspx.vb">
+      <DependentUpon>ExportarTareas.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Importar.aspx.designer.vb">
+      <DependentUpon>Importar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Importar.aspx.vb">
+      <DependentUpon>Importar.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="ImportarTareasXmlDocument.aspx.designer.vb">
+      <DependentUpon>ImportarTareasXmlDocument.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ImportarTareasXmlDocument.aspx.vb">
+      <DependentUpon>ImportarTareasXmlDocument.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Inicio.aspx.designer.vb">
@@ -241,6 +281,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ClassDiagram1.cd" />
+    <Content Include="App_Data\tareas.dtd" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -254,6 +295,7 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+    <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -290,7 +332,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>44049</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:4594/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

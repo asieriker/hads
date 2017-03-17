@@ -12,13 +12,13 @@
     <form id="form1" runat="server">
     <div>
     
-        <asp:Panel ID="Panel1" runat="server" BackColor="#FF9999" Font-Size="Large" ForeColor="Black" Height="79px" HorizontalAlign="Center" Font-Bold="True">
+        <asp:Panel ID="Panel1" runat="server" BackColor="#FFCC66" Font-Size="Large" ForeColor="Black" Height="79px" HorizontalAlign="Center" Font-Bold="True">
             ALUMNOS<br />
             <br />
             GESTIÓN DE TAREAS GENÉRICAS</asp:Panel>
     
         <br />
-        Selecciona una asignatura:&nbsp;&nbsp; <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True">
+        Selecciona una asignatura:&nbsp;&nbsp; <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" BackColor="#FFCC66">
         </asp:DropDownList>
         <br />
         <br />

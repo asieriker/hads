@@ -195,4 +195,13 @@ Public Class accesodatosSQL
         cerrarconexion()
         Return (numregs & " Tarea Instanciada ")
     End Function
+    Public Shared Function getTodasLasTareasGenericas() As SqlDataAdapter
+        conexion.ConnectionString = "Server=tcp:servidorhads11.database.windows.net,1433;Initial Catalog=HADS11_Tareas;Persist Security Info=False;User ID=asik9692@servidorhads11;Password=Quepazaloko23;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
+        Dim dstTgs = New DataSet()
+        Dim dapTgs As New SqlDataAdapter()
+        Dim st = "SELECT  * FROM  TareasGenericas"
+        dapTgs = New SqlDataAdapter(st, conexion)
+
+        Return dapTgs
+    End Function
 End Class

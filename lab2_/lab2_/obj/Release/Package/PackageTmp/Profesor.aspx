@@ -23,6 +23,10 @@
                 <asp:MenuItem Text="Asignaturas" Value="Asignaturas" ImageUrl="~/imagenes/rsz_boeken.png"></asp:MenuItem>
                 <asp:MenuItem ImageUrl="~/imagenes/rsz_tareas.png" NavigateUrl="~/TareasProfesor.aspx" Text="Tareas " Value="Tareas"></asp:MenuItem>
                 <asp:MenuItem ImageUrl="~/imagenes/rsz_social.png" Text="Grupos" Value="Grupos"></asp:MenuItem>
+                <asp:MenuItem Text="XML" Value="XML" ImageUrl="~/imagenes/rsz_1xml.png">
+                    <asp:MenuItem NavigateUrl="~/ImportarTareasXmlDocument.aspx" Text="Importar XML" Value="Importar XML"></asp:MenuItem>
+                    <asp:MenuItem Text="Exportar XML" Value="Exportar XML" NavigateUrl="~/ExportarTareas.aspx"></asp:MenuItem>
+                </asp:MenuItem>
             </Items>
             <StaticHoverStyle BackColor="#990000" ForeColor="White" />
             <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
@@ -30,7 +34,7 @@
         </asp:Menu>
     
     </div>
-        <asp:Panel ID="Panel1" runat="server" Font-Bold="True" Font-Size="XX-Large" ForeColor="#FF6600" HorizontalAlign="Center" style="z-index: -2; left: 11px; top: 47px; position: absolute; height: 72px; width: 1270px">
+        <asp:Panel ID="Panel1" runat="server" Font-Bold="True" Font-Size="XX-Large" ForeColor="#FF6600" HorizontalAlign="Center" style="z-index: -2; left: 11px; top: 47px; position: absolute; height: 72px; width: 1288px">
             Gestión Web de Tareas-Dedicación<br /> Profesores</asp:Panel>
     </form>
 </body>
