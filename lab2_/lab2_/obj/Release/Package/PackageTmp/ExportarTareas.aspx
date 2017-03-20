@@ -53,14 +53,19 @@
         </asp:GridView>
         <br />
         <asp:Label ID="Label1" runat="server"></asp:Label>
+        <br />
+        <br />
+        <br />
+            <asp:Button ID="Button2" runat="server" Text="FREDDY vs JEISON " />
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:HADS11_TareasConnectionString %>" SelectCommand="SELECT * FROM [TareasGenericas] WHERE ([CodAsig] = @CodAsig)">
             <SelectParameters>
                 <asp:ControlParameter ControlID="DropDownList1" Name="CodAsig" PropertyName="SelectedValue" Type="String" />
             </SelectParameters>
         </asp:SqlDataSource>
+        <asp:Button ID="Button3" runat="server" Text="Button" />
+        <br />
         <p>
         <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/Profesor.aspx">Volver</asp:LinkButton>
-            <asp:Button ID="Button2" runat="server" Text="FREDDY vs JEISON " />
         </p>
     </form>
 </body>

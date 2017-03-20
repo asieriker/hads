@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="InstanciarTarea.aspx.vb" Inherits="lab2_.InstanciarTarea" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="InstanciarTarea2.aspx.vb" Inherits="lab2_.InstanciarTarea" %>
 
 <!DOCTYPE html>
 
@@ -69,6 +69,8 @@
         <p>
             <asp:Label ID="Label7" runat="server"></asp:Label>
         </p>
+        <asp:GridView ID="GridView2" runat="server">
+        </asp:GridView>
     </form>
 </body>
 </html>

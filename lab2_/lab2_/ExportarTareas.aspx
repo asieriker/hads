@@ -62,6 +62,8 @@
                 <asp:ControlParameter ControlID="DropDownList1" Name="CodAsig" PropertyName="SelectedValue" Type="String" />
             </SelectParameters>
         </asp:SqlDataSource>
+        <asp:Button ID="Button3" runat="server" Text="Button" />
+        <br />
         <p>
         <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/Profesor.aspx">Volver</asp:LinkButton>
         </p>

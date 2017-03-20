@@ -15,3 +15,4 @@ C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\lab2_\bin\Newtonsoft.Json.xml
 C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\lab2_\obj\Debug\lab2_.dll
 C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\lab2_\obj\Debug\lab2_.xml
 C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\lab2_\obj\Debug\lab2_.pdb
+C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\lab2_\obj\Debug\lab2_.vbprojResolveAssemblyReference.cache

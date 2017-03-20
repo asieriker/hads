@@ -4,6 +4,8 @@ Imports accesodatosSQL.accesodatosSQL
 Imports System
 Imports System.IO
 Imports System.Text
+Imports System.Data.SqlClient
+
 Public Class ExportarTareas
     Inherits System.Web.UI.Page
 
@@ -27,6 +29,8 @@ Public Class ExportarTareas
                 ' Loop over employees in array.
                 For Each tarea In tabla.Rows
                     writer.WriteStartElement("tarea")
+                    ' Write the xmlns:bk="urn:book" namespace declaration.
+                    writer.WriteAttributeString("xmlns", DropDownList1.SelectedValue.ToLower, Nothing, "http://ji.ehu.es/" & DropDownList1.SelectedValue.ToLower)
                     writer.WriteElementString("codigo", tarea("Codigo").ToString)
                     writer.WriteElementString("descripcion", tarea("Descripcion").ToString)
                     writer.WriteElementString("hestimadas", tarea("HEstimadas").ToString)
@@ -51,17 +55,38 @@ Public Class ExportarTareas
         Label1.Text = resultJEISON
 
         Dim path As String = Server.MapPath("App_Data/" & DropDownList1.SelectedValue & ".json") '"c:\temp\MyTest.txt"  
-        Dim pathLOCAL As String = "C:\Users\Asier\Source\Workspaces\Área de trabajo\HADS\lab2_\lab2_\App_Data\" & DropDownList1.SelectedValue & ".json"
+        'Dim pathLOCAL As String = "C:\Users\Asier\Source\Workspaces\Área de trabajo\HADS\lab2_\lab2_\App_Data\" & DropDownList1.SelectedValue & ".json"
         ' Create or overwrite the file.
-        Dim fs As FileStream = File.Create(pathLOCAL) 'OJOOOOOOOOO
+        Dim fs As FileStream = File.Create(path) 'OJOOOOOOOOO
 
         ' Add text to the file.
         Dim info As Byte() = New UTF8Encoding(True).GetBytes(resultJEISON)
         fs.Write(info, 0, info.Length)
         fs.Close()
-        Label1.Text = Server.MapPath("App_Data/" & DropDownList1.SelectedValue & ".json")
+        'Label1.Text = Server.MapPath("App_Data/" & DropDownList1.SelectedValue & ".json")
         Dim fileReader As String
-        fileReader = My.Computer.FileSystem.ReadAllText("C:\Users\Asier\Source\Workspaces\Área de trabajo\HADS\lab2_\lab2_\App_Data\" & DropDownList1.SelectedValue & ".json")
+        fileReader = My.Computer.FileSystem.ReadAllText(Server.MapPath("App_Data/" & DropDownList1.SelectedValue & ".json"))
         Label1.Text = fileReader
+    End Sub
+
+    Protected Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Dim dta As New SqlDataAdapter
+        Dim dts As New DataSet
+        Dim tbl As New DataTable
+
+        dta = getTodasLasTareasGenericas()
+        dta.Fill(dts, "TareasGenericas")
+        tbl = dts.Tables("TareasGenericas")
+        Try
+            tbl.WriteXml(Server.MapPath("App_Data/" & DropDownList1.SelectedValue & ".xml"))
+        Catch ex As Exception
+            Label1.Text = "MAL: " + ex.StackTrace
+        End Try
+
+
+        Dim xmldoc As New System.Xml.XmlDocument
+        xmldoc.Load(Server.MapPath("App_Data/" & DropDownList1.SelectedValue & ".xml"))
+        Dim allText As String = xmldoc.InnerText
+        Label1.Text = allText
     End Sub
 End Class

@@ -18,11 +18,18 @@
             IMPORTAR TAREAS GENÉRICAS</asp:Panel>
     
     </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Label ID="Label4" runat="server" Font-Bold="True" style="z-index: 1; left: 492px; top: 94px; position: absolute" Text="Elige campo de ordenación"></asp:Label>
         <br />
         Seleccionar asignatura a Importar:<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:DropDownList ID="DropDownList1" runat="server" BackColor="#FFCC66" Height="33px" Width="106px" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="Codigo" DataValueField="Codigo">
             </asp:DropDownList>
+        <asp:RadioButtonList ID="RadioButtonList1" runat="server" AutoPostBack="True" style="z-index: 1; left: 484px; top: 113px; position: absolute; height: 77px; width: 190px">
+            <asp:ListItem Selected="True" Value="Codigo">Código</asp:ListItem>
+            <asp:ListItem Value="Descripcion">Descripción</asp:ListItem>
+            <asp:ListItem Value="HEstimadas">Horas Estimadas</asp:ListItem>
+        </asp:RadioButtonList>
         <br />
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:HADS11_TareasConnectionString %>" SelectCommand="SELECT DISTINCT A.Codigo FROM Asignaturas AS A, ProfesoresGrupo AS PG, GruposClase GC WHERE A.Codigo=GC.CodigoAsig AND GC.Codigo=PG.CodigoGrupo AND PG.email=@email">
                 <SelectParameters>
@@ -57,6 +64,8 @@
         <asp:Label ID="Label3" runat="server"></asp:Label>
         <br />
         <br />
+        <asp:GridView ID="GridView1" runat="server" style="z-index: 1; left: 461px; top: 216px; position: absolute; height: 133px; width: 187px">
+        </asp:GridView>
         <br />
         <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/Profesor.aspx">Volver</asp:LinkButton>
     </form>

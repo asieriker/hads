@@ -41,8 +41,12 @@ Public Class ImportarTareasXmlDocument
             dapTgs.Update(dataSetTgs, "TareasGenericas")
             dataSetTgs.AcceptChanges()
             Label3.Text = "Importado correctamente"
-        Catch ex As Exception
-            Label3.Text = ex.ToString + "Error en la importación"
+        Catch _Ex As SqlException
+
+            If _Ex.Number = 2627 Then
+                Label3.Text = "Ya has importado las tareas"
+            End If
+
         End Try
     End Sub
     Protected Sub DropDownList1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles DropDownList1.SelectedIndexChanged
@@ -52,7 +56,7 @@ Public Class ImportarTareasXmlDocument
             Try
                 Xml1.DocumentSource = Server.MapPath("App_Data/" &
                 DropDownList1.SelectedValue & ".xml")
-                Xml1.TransformSource = Server.MapPath("App_Data/XSLTFile.xsl")
+                Xml1.TransformSource = Server.MapPath("App_Data/XSLTFile" & RadioButtonList1.SelectedValue & ".xsl")
             Catch ex As Exception
                 Label1.Text = ex.ToString + "Error al cargar el XML"
             End Try
@@ -75,21 +79,48 @@ Public Class ImportarTareasXmlDocument
             Dim oldtable As DataTable = New DataTable()
             oldtable = dataSetTgs.Tables(0)
             For Each tarea In table.Rows
-                Dim row As DataRow
-                row = oldtable.NewRow()
-                row("codigo") = tarea(0).ToString
-                row("descripcion") = tarea(1).ToString
-                row("codasig") = tarea(5).ToString
-                row("hestimadas") = Convert.ToInt32(tarea(2).ToString)
-                row("explotacion") = tarea(3).ToString
-                row("tipotarea") = tarea(4).ToString
-                oldtable.Rows.Add(row)
+
+                Dim rowselected() As DataRow
+                rowselected = oldtable.Select("codigo='" + tarea(0).ToString + "'")
+                If rowselected.Length < 1 Then
+                    Dim row As DataRow
+                    row = oldtable.NewRow()
+                    row("codigo") = tarea(0).ToString
+                    row("descripcion") = tarea(1).ToString
+                    row("codasig") = tarea(5).ToString
+                    row("hestimadas") = Convert.ToInt32(tarea(2).ToString)
+                    row("explotacion") = tarea(3).ToString
+                    row("tipotarea") = tarea(4).ToString
+                    oldtable.Rows.Add(row)
+                End If
             Next
-            dapTgs.Update(dataSetTgs, "TareasGenericas")
+            Dim num = dapTgs.Update(dataSetTgs, "TareasGenericas")
             dataSetTgs.AcceptChanges()
-            Label3.Text = "Importado correctamente"
-        Catch ex As Exception
-            Label3.Text = ex.ToString + "Error al cargar el XML"
+            If num > 0 Then
+                Label3.Text = "Cambios salvados en la BD"
+            Else
+                Label3.Text = "No hay nuevas tareas"
+            End If
+        Catch _Ex As SqlException
+
+            If _Ex.Number = 2627 Then
+                Label3.Text = "Ya has importado las tareas"
+            End If
+
         End Try
+    End Sub
+
+    Protected Sub RadioButtonList1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles RadioButtonList1.SelectedIndexChanged
+        If Not File.Exists(Server.MapPath("App_Data/" & DropDownList1.SelectedValue & ".xml")) Then
+            Label1.Text = "No existe el XML"
+        Else
+            Try
+                Xml1.DocumentSource = Server.MapPath("App_Data/" &
+                DropDownList1.SelectedValue & ".xml")
+                Xml1.TransformSource = Server.MapPath("App_Data/XSLTFile" & RadioButtonList1.SelectedValue & ".xsl")
+            Catch ex As Exception
+                Label1.Text = ex.ToString + "Error al cargar el XML"
+            End Try
+        End If
     End Sub
 End Class

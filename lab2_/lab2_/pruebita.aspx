@@ -1,15 +1,14 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="InstanciarTarea.aspx.vb" Inherits="lab2_.InstanciarTarea" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="pruebita.aspx.vb" Inherits="lab2_.pruebita" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head id="Head1" runat="server">
+<head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
-    <link href="StyleSheet1.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="form2" runat="server">
     <div>
     
         <asp:Panel ID="Panel1" runat="server" BackColor="#FFCC66" Font-Size="Large" ForeColor="Black" Height="79px" HorizontalAlign="Center" Font-Bold="True">
@@ -69,6 +68,13 @@
         <p>
             <asp:Label ID="Label7" runat="server"></asp:Label>
         </p>
+        <asp:GridView ID="GridView2" runat="server">
+        </asp:GridView>
+    </form>
+    <form id="form1" runat="server">
+    <div>
+    
+    </div>
     </form>
 </body>
 </html>

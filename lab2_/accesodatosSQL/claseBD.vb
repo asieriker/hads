@@ -180,6 +180,16 @@ Public Class accesodatosSQL
         dapTes.Fill(dstTes, "TareasEstudiante")
         Return dstTes
     End Function
+
+    Public Shared Function getTareasEstudianteDA(ByVal email As String) As SqlDataAdapter
+        conexion.ConnectionString = "Server=tcp:servidorhads11.database.windows.net,1433;Initial Catalog=HADS11_Tareas;Persist Security Info=False;User ID=asik9692@servidorhads11;Password=Quepazaloko23;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
+        Dim dstTes = New DataSet()
+        Dim dapTes As New SqlDataAdapter()
+        Dim st = "SELECT * FROM EstudiantesTareas AS ET WHERE ET.email='" & email & "'"
+        dapTes = New SqlDataAdapter(st, conexion)
+        Return dapTes
+    End Function
+
     Public Shared Function instanciarTareaDB(ByVal email As String, ByVal codTarea As String, ByVal Hest As String, ByVal Hreal As String)
         'conexion.ConnectionString = "Server=tcp:servidorhads11.database.windows.net,1433;Initial Catalog=HADS11_Tareas;Persist Security Info=False;User ID=asik9692@servidorhads11;Password=Quepazaloko23;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
         conectar()

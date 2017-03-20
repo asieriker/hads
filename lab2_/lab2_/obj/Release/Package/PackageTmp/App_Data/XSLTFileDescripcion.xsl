@@ -14,6 +14,7 @@
             <td>HORAS EST.</td>
           </tr>
           <xsl:for-each select="./tarea">
+            <xsl:sort select="descripcion" />
             <tr>
               <td>
                 <xsl:value-of select="./codigo"/>

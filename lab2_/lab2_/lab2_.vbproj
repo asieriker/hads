@@ -102,13 +102,16 @@
   <ItemGroup>
     <Content Include="Alumno.aspx" />
     <Content Include="Aplicacion.aspx" />
+    <Content Include="App_Data\XSLTFileCodigo.xsl" />
+    <Content Include="App_Data\XSLTFileDescripcion.xsl" />
     <Content Include="App_Data\HAS.xml" />
     <Content Include="App_Data\SEG.xml" />
-    <Content Include="App_Data\XSLTFile.xsl" />
+    <Content Include="App_Data\XSLTFileHEstimadas.xsl" />
     <Content Include="audios\tieneunnuevofs.wav" />
     <Content Include="CambiarPassword.aspx" />
     <Content Include="conexionBD.aspx" />
     <Content Include="Confirmar.aspx" />
+    <Content Include="InstanciarTarea2.aspx" />
     <Content Include="Estadisticas.aspx" />
     <Content Include="ExportarTareas.aspx" />
     <Content Include="imagenes\521cd1a5e0175.jpg" />
@@ -131,6 +134,7 @@
     <Content Include="InsertarTarea.aspx" />
     <Content Include="InstanciarTarea.aspx" />
     <Content Include="Profesor.aspx" />
+    <Content Include="pruebita.aspx" />
     <Content Include="Registro.aspx" />
     <Content Include="StyleSheet1.css" />
     <Content Include="TareasAlumnos.aspx" />
@@ -172,6 +176,13 @@
     </Compile>
     <Compile Include="Confirmar.aspx.vb">
       <DependentUpon>Confirmar.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="InstanciarTarea2.aspx.designer.vb">
+      <DependentUpon>InstanciarTarea2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InstanciarTarea2.aspx.vb">
+      <DependentUpon>InstanciarTarea2.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Estadisticas.aspx.designer.vb">
@@ -247,6 +258,13 @@
     </Compile>
     <Compile Include="Profesor.aspx.vb">
       <DependentUpon>Profesor.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="pruebita.aspx.designer.vb">
+      <DependentUpon>pruebita.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pruebita.aspx.vb">
+      <DependentUpon>pruebita.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Registro.aspx.designer.vb">

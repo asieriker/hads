@@ -67,7 +67,8 @@
             <asp:Label ID="Label5" runat="server"></asp:Label>
         </p>
         <p>
-            &nbsp;</p>
+            <asp:Label ID="Label7" runat="server"></asp:Label>
+        </p>
     </form>
 </body>
 </html>
