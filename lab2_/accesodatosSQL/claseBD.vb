@@ -1,5 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Net.Mail
+Imports System.Security.Cryptography
 
 Public Class accesodatosSQL
     Private Shared conexion As New SqlConnection
@@ -26,18 +27,50 @@ Public Class accesodatosSQL
         Dim numConfir As Integer
         Randomize()
         numConfir = CLng(Rnd() * 9000000) + 1000000
+
+        ''''''''''''''''''''''''''''
+        'Dim Texto As String = "Prueba" ' Cadena original
+        Dim TextoEnBytes As Byte()
+        Dim HashEnBytes As Byte() 'Resultado en Bytes
+        Dim HashPass As String 'Resultado de HASH
+
+        Dim md5 As New SHA1CryptoServiceProvider
+        TextoEnBytes = System.Text.Encoding.ASCII.GetBytes(pass)
+
+        HashEnBytes = md5.ComputeHash(TextoEnBytes)
+        'HashPass = System.Text.Encoding.UTF8.GetString(HashEnBytes)
+        HashPass = BitConverter.ToString(HashEnBytes)
+        Dim HashPassNuevo = HashPass.Replace("-", "")
+        ''''''''''''''''''''''''''''''
+        'Dim laPass = AES_Encrypt("23", pass)
+        '     aaaaabbbcccccccdd.Substring(5, 3) = bbb
+        Dim dniNuevo = dni.Substring(0, dni.Length - 1)
+        'Dim HashPassNuevo = HashPass.Substring(0, HashPass.Length - 10)
+
         'Dim st = "insert into Usuarios (email,nombre,apellidos,pregunta,respuesta,dni,numconfir,confirmado,pass)  values ('" & email & " ', '" & nombre & " ', '" & apellidos & " ', '" & pregunta & " ', '" & respuesta & " ', '" & dni & " ', '" & numConfir & " ', 0, '" & pass & " ')"
-        Dim st = "insert into Usuarios (email,nombre,pregunta,respuesta,dni,confirmado,pass)  values ('" & email & " ', '" & nombre & " ', '" & pregunta & " ', '" & respuesta & " ', '" & "78969585" & " ', 0, '" & pass & " ')"
+        Dim st = "insert into Usuarios (email,nombre,pregunta,respuesta,dni,confirmado,pass,tipo)  values ('" & email & " ', '" & nombre & " ', '" & pregunta & " ', '" & respuesta & " ', '" & dniNuevo & " ', 0, '" & HashPassNuevo & "'," & " 'A')"
         Dim numregs As Integer
         comando = New SqlCommand(st, conexion)
         Try
             numregs = comando.ExecuteNonQuery()
-            accesodatosSQL.enviarEmail(email, numConfir)
+            'accesodatosSQL.enviarEmail(email, numConfir)
         Catch ex As Exception
             Return "," + ex.Message
         End Try
         Return (numregs & " registro(s) insertado(s) en la BD ")
     End Function
+    ' Public Shared Function programita()
+    'cerrarconexion()
+
+    'conectar()
+    'registrarUsuario("pepe@ikasle.ehu.es", "JM Blanco", "nolometemos", "Mi segundo", "Arbe", "13231313T", "blanco")
+    'registrarUsuario("vadillo@ehu.es", "JA Vadillo", "nolometemos", "Mi apellido", "Vadillo", "87654321", "vadillo")
+    'registrarUsuario("admin@ehu.es", "Admin", "admin", "Admin", "Admin", "72455696", "admin")
+    'registrarUsuario("pepe@ikasle.ehu.es", "Pepe", "nolometemos", "Mi nombre", "Pepe", "1234567T", "pepe")
+    'registrarUsuario("nerea@ikasle.ehu.es", "Nerea", "nolometemos", "Mi nombre", "Nerea", "23232323T", "nerea")
+    'cerrarconexion()
+    'Return ""
+    ' End Function
 
     Public Shared Function enviarEmail(ByVal email As String, ByVal numConfir As String) As Boolean
         Try
@@ -76,8 +109,23 @@ Public Class accesodatosSQL
     End Function
 
     Public Shared Function loginUsuario(ByVal email As String, ByVal pass As String) As String
-        Dim st = "select count(*) from Usuarios WHERE email='" & email.ToString & "' and pass='" + pass.ToString & "' and confirmado=1" & " and tipo='P'"
-        Dim st2 = "select count(*) from Usuarios WHERE email='" & email.ToString & "' and pass='" + pass.ToString & "' and confirmado=1" & " and tipo='A'"
+
+        Dim TextoEnBytes As Byte()
+        Dim HashEnBytes As Byte() 'Resultado en Bytes
+        Dim HashPass As String 'Resultado de HASH
+        Dim md5 As New SHA1CryptoServiceProvider
+        TextoEnBytes = System.Text.Encoding.ASCII.GetBytes(pass)
+
+        HashEnBytes = md5.ComputeHash(TextoEnBytes)
+        'HashPass = System.Text.Encoding.UTF8.GetString(HashEnBytes)
+        HashPass = BitConverter.ToString(HashEnBytes)
+        Dim HashPassNuevo = HashPass.Replace("-", "")
+        'BitConverter.toString
+
+        ''''''''''''''''''
+
+        Dim st = "select count(*) from Usuarios WHERE email='" & email.ToString & "' and pass='" & HashPassNuevo & "' and confirmado=1" & " and tipo='P'"
+        Dim st2 = "select count(*) from Usuarios WHERE email='" & email.ToString & "' and pass='" & HashPassNuevo & "' and confirmado=1" & " and tipo='A'"
 
         Dim numregs As Integer
         Dim numregs2 As Integer
@@ -89,7 +137,6 @@ Public Class accesodatosSQL
         numregs2 = comando2.ExecuteScalar()
 
         If numregs = 1 Then
-
             Return "P"
         ElseIf numregs2 = 1 Then
             Return "A"
@@ -99,12 +146,12 @@ Public Class accesodatosSQL
     End Function
 
     Public Shared Function confirmarUsuario(ByVal email As String, ByVal numConfir As Integer) As String
-        Dim st = "select count(*) from Usuarios WHERE email='" & email.ToString & "' and numConfir='" & numConfir.ToString & "'"
+        Dim st = "select count(*) from Usuarios WHERE email='" & email.ToString & "'"
         Dim numregs As Integer
         comando = New SqlCommand(st, conexion)
         numregs = comando.ExecuteScalar()
         If numregs = 1 Then
-            st = "update Usuarios SET confirmado=1  WHERE email='" & email.ToString & "' and numConfir='" & numConfir.ToString & "'"
+            st = "update Usuarios SET confirmado=1  WHERE email='" & email.ToString & "'"
             comando = New SqlCommand(st, conexion)
             numregs = comando.ExecuteNonQuery()
         End If
@@ -214,4 +261,7 @@ Public Class accesodatosSQL
 
         Return dapTgs
     End Function
+
+
+ 
 End Class

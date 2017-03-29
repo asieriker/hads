@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Inicio.aspx.vb" Inherits="lab2_.Inicio" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="inicio.aspx.vb" Inherits="lab2_.Inicio" %>
 
 <!DOCTYPE html>
 
@@ -15,12 +15,36 @@
             background-image: url('imagenes/ignasi_pattern_s.png');
             background-repeat: repeat;
         }
+        .auto-style1 {
+            width: 500px;
+            height: 381px;
+        }
+        .auto-style2 {
+            width: 70px;
+            height: 59px;
+            float: left;
+            z-index: 1;
+            left: 25px;
+            top: 23px;
+            position: absolute;
+        }
+        .auto-style3 {
+            text-align: center;
+        }
     </style>
     <link href="StyleSheet1.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
+    <div class="auto-style3">
+    
+        <asp:Panel ID="Panel1" runat="server" BackColor="#FFCC66" Font-Size="XX-Large" ForeColor="Black" Height="79px" HorizontalAlign="Center" Font-Bold="True">
+            <br />
+            Gestión de Tareas<img alt="" class="auto-style2" src="imagenes/upv-ehu.gif" /></asp:Panel>
+    
+        <div class="auto-style3">
+            <br />
+            <br />
     
         Usuario&nbsp;&nbsp;
         <asp:TextBox ID="Usuario" runat="server"></asp:TextBox>
@@ -32,15 +56,20 @@
         <asp:Button ID="Button1" runat="server" BorderStyle="Groove" Text="Iniciar Sesión" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="ARegistro" runat="server" BorderStyle="Groove" Text="Registrar" CausesValidation="False" PostBackUrl="~/Registro.aspx" />
-        <br />
+            <br />
         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="Usuario" ErrorMessage="Introduce un email válido" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
         <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="Label1" runat="server"></asp:Label>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;<asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="Button2" runat="server" BorderStyle="Groove" Text="Cambiar contraseña" CausesValidation="False" PostBackUrl="~/CambiarPassword.aspx" />
         <br />
     
+        </div>
+    
     </div>
     </form>
+    <p class="auto-style3">
+        <img class="auto-style1" src="imagenes/giphy%20(1).gif" /></p>
 </body>
 </html>

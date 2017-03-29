@@ -13,6 +13,6 @@ Public Class Confirmar
     End Sub
 
     Protected Sub ImageButton1_Click(sender As Object, e As ImageClickEventArgs) Handles ImageButton1.Click
-        Response.Redirect("http://hads11asik.azurewebsites.net/Inicio.aspx")
+        Response.Redirect("~/Inicio.aspx")
     End Sub
 End Class
