@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="inicio.aspx.vb" Inherits="lab2_.Inicio" %>
 
+<%@ Register src="WebUserControl1.ascx" tagname="WebUserControl1" tagprefix="uc1" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -15,10 +17,6 @@
             background-image: url('imagenes/ignasi_pattern_s.png');
             background-repeat: repeat;
         }
-        .auto-style1 {
-            width: 500px;
-            height: 381px;
-        }
         .auto-style2 {
             width: 70px;
             height: 59px;
@@ -31,7 +29,17 @@
         .auto-style3 {
             text-align: center;
         }
-    </style>
+        .auto-style4 {
+            width: 171px;
+            height: 447px;
+            z-index: 1;
+            left: 600px;
+            top: 174px;
+            position: absolute;
+            float: right;
+            text-align: justify;
+        }
+        </style>
     <link href="StyleSheet1.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -60,16 +68,28 @@
         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="Usuario" ErrorMessage="Introduce un email válido" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
         <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="Label1" runat="server"></asp:Label>
-        &nbsp;&nbsp;&nbsp;<asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
+        &nbsp;&nbsp;&nbsp;<asp:Label ID="Label2" runat="server"></asp:Label>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="Button2" runat="server" BorderStyle="Groove" Text="Cambiar contraseña" CausesValidation="False" PostBackUrl="~/CambiarPassword.aspx" />
         <br />
-    
+   
         </div>
     
     </div>
-    </form>
+        
     <p class="auto-style3">
-        <img class="auto-style1" src="imagenes/giphy%20(1).gif" /></p>
+        <img alt="" class="auto-style4" src="imagenes/J3xurDF.gif" /></p>
+        <p class="auto-style3">
+            &nbsp;</p>
+
+                <uc1:WebUserControl1 ID="WebUserControl11" runat="server" />
+
+        <p>
+        </p>
+        <p class="auto-style3">
+            &nbsp;</p>
+    <p class="auto-style3">
+        &nbsp;</p>
+         </form>
 </body>
 </html>

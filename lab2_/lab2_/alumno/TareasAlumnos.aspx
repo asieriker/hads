@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="TareasAlumnos.aspx.vb" Inherits="lab2_.TareasAlumnos" %>
 
+<%@ Register src="../LogOut.ascx" tagname="LogOut" tagprefix="uc1" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -15,6 +17,7 @@
     
         <asp:Panel ID="Panel1" runat="server" BackColor="#FFCC66" Font-Size="Large" ForeColor="Black" Height="79px" HorizontalAlign="Center" Font-Bold="True">
             ALUMNOS<br />
+            <uc1:LogOut ID="LogOut1" runat="server" />
             <br />
             GESTIÓN DE TAREAS GENÉRICAS</asp:Panel>
     
@@ -42,6 +45,23 @@
     
         <br />
         <asp:Label ID="Label1" runat="server"></asp:Label>
+
+        <div>
+    
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+        <br />
+         <div>
+            
+             
+        </div>
+    </div>
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <ContentTemplate>
+                <ajaxToolkit:Twitter ID="Twitter1" Mode="Search" Search="TareasGenericasHADS" runat="server" IncludeRetweets="True" IsLiveContentOnDesignMode="True" CacheDuration="15" IncludeReplies="False"/>
+                   <asp:Timer ID="Timer1" runat="server" Interval="1000"></asp:Timer>
+                 </ContentTemplate>
+        </asp:UpdatePanel>
     
     </div>
     </form>

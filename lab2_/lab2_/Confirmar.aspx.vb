@@ -10,6 +10,8 @@ Public Class Confirmar
             Label1.Text = "ConfirmADO.NET"
         End If
         cerrarconexion()
+        'Application.Contents("numerousuarios") = 0
+
     End Sub
 
     Protected Sub ImageButton1_Click(sender As Object, e As ImageClickEventArgs) Handles ImageButton1.Click

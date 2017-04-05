@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Alumno.aspx.vb" Inherits="lab2_.Alumno" %>
 
+<%@ Register src="../LogOut.ascx" tagname="LogOut" tagprefix="uc1" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -18,6 +20,15 @@
 <body style="height: 456px">
     <form id="form1" runat="server">
     <div>
+        <uc1:LogOut ID="LogOut1" runat="server" />
+        <br />
+        <br />
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+    
+        <br />
+        <br />
+        <br />
     
         <asp:Menu ID="Menu1" runat="server" BackColor="#FFFBD6" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#990000" StaticSubMenuIndent="10px" style="font-weight: 700; font-size: medium">
             <DynamicHoverStyle BackColor="#990000" ForeColor="White" />
@@ -26,7 +37,7 @@
             <DynamicSelectedStyle BackColor="#FFCC66" />
             <Items>
                 <asp:MenuItem NavigateUrl="~/Alumno.aspx" Selected="True" Text="Inicio" Value="Inicio"></asp:MenuItem>
-                <asp:MenuItem ImageUrl="~/imagenes/rsz_tareas.png" NavigateUrl="~/TareasAlumnos.aspx" Text="Tareas Genéricas" Value="Tareas Genéricas"></asp:MenuItem>
+                <asp:MenuItem ImageUrl="~/imagenes/rsz_tareas.png" NavigateUrl="~/alumno/TareasAlumnos.aspx" Text="Tareas Genéricas" Value="Tareas Genéricas"></asp:MenuItem>
                 <asp:MenuItem ImageUrl="~/imagenes/rsz_social.png" Text="Grupos" Value="Grupos"></asp:MenuItem>
             </Items>
             <StaticHoverStyle BackColor="#990000" ForeColor="White" />
@@ -39,8 +50,7 @@
         <br />
         <br />
         </span>
-        <asp:ScriptManager ID="ScriptManager1" runat="server">
-        </asp:ScriptManager>
+        
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
                 <asp:Timer ID="Timer1" runat="server" Interval="1000">
@@ -62,7 +72,7 @@
         <br />
         <asp:UpdateProgress ID="UpdateProgress1" runat="server">
             <ProgressTemplate>
-                tranki tronko currando...
+                buscando...
             </ProgressTemplate>
         </asp:UpdateProgress>
         </div>

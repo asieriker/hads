@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="ImportarTareasXmlDocument.aspx.vb" Inherits="lab2_.ImportarTareasXmlDocument" %>
 
+<%@ Register src="../LogOut.ascx" tagname="LogOut" tagprefix="uc1" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -16,6 +18,7 @@
         <asp:Panel ID="Panel1" runat="server" BackColor="#FFCC66" Font-Size="Large" ForeColor="Black" Height="79px" HorizontalAlign="Center" Font-Bold="True">
             PROFESOR<br />
             <br />
+            <uc1:LogOut ID="LogOut1" runat="server" />
             IMPORTAR TAREAS GENÉRICAS</asp:Panel>
     
     </div>

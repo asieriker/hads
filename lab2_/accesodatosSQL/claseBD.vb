@@ -109,7 +109,6 @@ Public Class accesodatosSQL
     End Function
 
     Public Shared Function loginUsuario(ByVal email As String, ByVal pass As String) As String
-
         Dim TextoEnBytes As Byte()
         Dim HashEnBytes As Byte() 'Resultado en Bytes
         Dim HashPass As String 'Resultado de HASH
@@ -126,7 +125,6 @@ Public Class accesodatosSQL
 
         Dim st = "select count(*) from Usuarios WHERE email='" & email.ToString & "' and pass='" & HashPassNuevo & "' and confirmado=1" & " and tipo='P'"
         Dim st2 = "select count(*) from Usuarios WHERE email='" & email.ToString & "' and pass='" & HashPassNuevo & "' and confirmado=1" & " and tipo='A'"
-
         Dim numregs As Integer
         Dim numregs2 As Integer
 

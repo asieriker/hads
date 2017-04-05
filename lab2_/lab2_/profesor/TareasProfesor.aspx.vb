@@ -5,9 +5,14 @@
 
     End Sub
     Protected Sub LinkButton2_Click(sender As Object, e As EventArgs) Handles LinkButton2.Click
+        FormsAuthentication.SignOut()
         Session.Abandon()
         System.Web.Security.FormsAuthentication.SignOut()
 
-        Response.Redirect("http://hads11asik.azurewebsites.net/Inicio.aspx")
+        Response.Redirect("http://hads11asik.azurewebsites.net/inicio.aspx")
+    End Sub
+
+    Protected Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+
     End Sub
 End Class

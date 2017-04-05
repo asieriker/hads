@@ -1,6 +1,8 @@
 C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\lab2_\bin\lab2_.dll
 C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\lab2_\bin\lab2_.pdb
 C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\lab2_\bin\lab2_.xml
+C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\lab2_\bin\lab2_.dll.CodeAnalysisLog.xml
+C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\lab2_\bin\lab2_.dll.lastcodeanalysissucceeded
 C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\lab2_\bin\accesodatosSQL.dll
 C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\lab2_\bin\EntityFramework.dll
 C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\lab2_\bin\EntityFramework.SqlServer.dll
@@ -10,11 +12,8 @@ C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\lab2_\bin\accesodatosSQL.xml
 C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\lab2_\bin\EntityFramework.xml
 C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\lab2_\bin\EntityFramework.SqlServer.xml
 C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\lab2_\bin\Newtonsoft.Json.xml
-C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\lab2_\obj\Debug\lab2_.vbprojResolveAssemblyReference.cache
 C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\lab2_\obj\Debug\lab2_.Resources.resources
 C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\lab2_\obj\Debug\lab2_.vbproj.GenerateResource.Cache
 C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\lab2_\obj\Debug\lab2_.dll
 C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\lab2_\obj\Debug\lab2_.xml
 C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\lab2_\obj\Debug\lab2_.pdb
-C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\lab2_\bin\lab2_.dll.CodeAnalysisLog.xml
-C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\lab2_\bin\lab2_.dll.lastcodeanalysissucceeded

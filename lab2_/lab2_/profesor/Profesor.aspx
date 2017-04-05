@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Profesor.aspx.vb" Inherits="lab2_.Profesor" %>
 
+<%@ Register src="../LogOut.ascx" tagname="LogOut" tagprefix="uc1" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -12,6 +14,14 @@
 <body>
     <form id="form1" runat="server">
     <div>
+    
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <uc1:LogOut ID="LogOut1" runat="server" />
     
         <asp:Menu ID="Menu1" runat="server" BackColor="#FFFBD6" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#990000" StaticSubMenuIndent="10px" style="font-weight: 700; font-size: medium">
             <DynamicHoverStyle BackColor="#990000" ForeColor="White" />

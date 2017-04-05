@@ -49,6 +49,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\accesodatosSQL\bin\Debug\accesodatosSQL.dll</HintPath>
     </Reference>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\packages\AjaxControlToolkit.16.1.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.dll</HintPath>
     </Reference>
@@ -113,8 +116,11 @@
     <Content Include="audios\tieneunnuevofs.wav" />
     <Content Include="CambiarPassword.aspx" />
     <Content Include="Confirmar.aspx" />
+    <Content Include="Global.asax" />
     <Content Include="imagenes\giphy %281%29.gif" />
+    <Content Include="imagenes\J3xurDF.gif" />
     <Content Include="imagenes\upv-ehu.gif" />
+    <Content Include="LogOut.ascx" />
     <Content Include="profesor\Estadisticas.aspx" />
     <Content Include="profesor\ExportarTareas.aspx" />
     <Content Include="imagenes\521cd1a5e0175.jpg" />
@@ -136,10 +142,15 @@
     <Content Include="profesor\InsertarTarea.aspx" />
     <Content Include="alumno\InstanciarTarea.aspx" />
     <Content Include="profesor\Profesor.aspx" />
+    <Content Include="pruebaTUITAH.aspx" />
     <Content Include="Registro.aspx" />
     <Content Include="StyleSheet1.css" />
     <Content Include="profesor\TareasProfesor.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="tuita.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="WebUserControl1.ascx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="admin\Admin.aspx.designer.vb">
@@ -183,6 +194,16 @@
     <Compile Include="Confirmar.aspx.vb">
       <DependentUpon>Confirmar.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="LogOut.ascx.designer.vb">
+      <DependentUpon>LogOut.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="LogOut.ascx.vb">
+      <DependentUpon>LogOut.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="profesor\Estadisticas.aspx.designer.vb">
       <DependentUpon>Estadisticas.aspx</DependentUpon>
@@ -252,6 +273,13 @@
       <DependentUpon>Profesor.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="pruebaTUITAH.aspx.designer.vb">
+      <DependentUpon>pruebaTUITAH.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pruebaTUITAH.aspx.vb">
+      <DependentUpon>pruebaTUITAH.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Registro.aspx.designer.vb">
       <DependentUpon>Registro.aspx</DependentUpon>
     </Compile>
@@ -265,6 +293,20 @@
     <Compile Include="profesor\TareasProfesor.aspx.vb">
       <DependentUpon>TareasProfesor.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="tuita.aspx.designer.vb">
+      <DependentUpon>tuita.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tuita.aspx.vb">
+      <DependentUpon>tuita.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControl1.ascx.designer.vb">
+      <DependentUpon>WebUserControl1.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControl1.ascx.vb">
+      <DependentUpon>WebUserControl1.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>

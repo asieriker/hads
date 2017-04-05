@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="ExportarTareas.aspx.vb" Inherits="lab2_.ExportarTareas" %>
 
+<%@ Register src="../LogOut.ascx" tagname="LogOut" tagprefix="uc1" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -15,6 +17,7 @@
     
         <asp:Panel ID="Panel1" runat="server" BackColor="#FFCC66" Font-Size="Large" ForeColor="Black" Height="79px" HorizontalAlign="Center" Font-Bold="True">
             PROFESOR<br />
+            <uc1:LogOut ID="LogOut1" runat="server" />
             <br />
             EXPORTAR TAREAS GENÉRICAS</asp:Panel>
     

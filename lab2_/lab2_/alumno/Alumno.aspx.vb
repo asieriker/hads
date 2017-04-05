@@ -11,6 +11,12 @@
     End Sub
 
     Protected Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        Label1.Text = Now
+        'Label1.Text = Session.Contents("email")
+        'Label1.Text = Application.Contents("email")
+        'Dim lista As New List(Of String)
+        'lista = Application.Contents("lista")
+        ' For Each i As String In lista
+        'Label1.Text += i
+        'Next
     End Sub
 End Class

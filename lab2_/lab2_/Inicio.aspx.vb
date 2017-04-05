@@ -19,9 +19,19 @@ Public Class Inicio
         'programita()
         If result = "P" Then
             cerrarconexion()
+            Application.Lock()
+            Dim listaProfs As New List(Of String)
+            listaProfs = Application.Contents("listaProfs")
+            listaProfs.Add(Usuario.Text)
+            Application.Contents("listaProfs") = listaProfs
+            Dim NS As Integer = Application.Contents("numeroprofes")
+            NS = Application.Contents("numeroprofes") + 1
+            Application.Contents("numeroprofes") = NS
+            Application.UnLock()
             Session.Contents("email") = Usuario.Text
-            If Usuario.Text = "vadillo@ehu.es" Then
-                FormsAuthentication.SetAuthCookie("vadillo@ehu.es", False)
+            If Usuario.Text.Equals("vadillo@ehu.es") Then
+                FormsAuthentication.SetAuthCookie("vadillo", False)
+                Response.Redirect("~/profesor/Profesor.aspx")
             ElseIf Usuario.Text = "admin@ehu.es" Then
                 FormsAuthentication.SetAuthCookie("Admin", False)
                 Response.Redirect("~/admin/Admin.aspx")
@@ -31,6 +41,18 @@ Public Class Inicio
             End If
         ElseIf result = "A" Then
             cerrarconexion()
+            Application.Lock()
+
+            Dim lista As New List(Of String)
+            lista = Application.Contents("lista")
+            lista.Add(Usuario.Text)
+            Application.Contents("lista") = lista
+
+            Dim NS As Integer = Application.Contents("numerousuarios")
+            NS = Application.Contents("numerousuarios") + 1
+            Application.Contents("numerousuarios") = NS
+            Application.UnLock()
+
             Session.Contents("email") = Usuario.Text
             FormsAuthentication.SetAuthCookie("Alumno", False)
             Response.Redirect("~/alumno/Alumno.aspx")

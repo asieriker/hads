@@ -32,6 +32,15 @@ Partial Public Class ExportarTareas
     Protected WithEvents Panel1 As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
+    '''Control LogOut1.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents LogOut1 As Global.lab2_.LogOut
+
+    '''<summary>
     '''Control DropDownList1.
     '''</summary>
     '''<remarks>
