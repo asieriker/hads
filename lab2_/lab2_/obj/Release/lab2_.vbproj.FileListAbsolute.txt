@@ -16,3 +16,5 @@ C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\lab2_\bin\Newtonsoft.Json.dll
 C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\lab2_\bin\EntityFramework.xml
 C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\lab2_\bin\EntityFramework.SqlServer.xml
 C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\lab2_\bin\Newtonsoft.Json.xml
+C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\lab2_\bin\lab2_.XmlSerializers.dll
+C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\lab2_\obj\Release\lab2_.XmlSerializers.dll

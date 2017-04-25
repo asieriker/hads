@@ -22,8 +22,17 @@
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
                 <ajaxToolkit:Twitter ID="Twitter1" Mode="Search" Search="spiderman" runat="server" IncludeRetweets="True" IsLiveContentOnDesignMode="True" CacheDuration="15" IncludeReplies="False"/>
+                 <br />
+                <br />
+                <br />
                  </ContentTemplate>
         </asp:UpdatePanel>
+
+
+        <asp:GridView ID="GridView1" runat="server">
+        </asp:GridView>
+
+
     </form>
 </body>
 </html>

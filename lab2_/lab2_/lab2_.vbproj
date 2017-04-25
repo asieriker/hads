@@ -24,6 +24,7 @@
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -67,6 +68,8 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
@@ -108,6 +111,7 @@
     <Content Include="admin\gestionUsuarios.aspx" />
     <Content Include="alumno\Alumno.aspx" />
     <Content Include="alumno\TareasAlumnos.aspx" />
+    <Content Include="App_Data\toppasswords.txt" />
     <Content Include="App_Data\XSLTFileCodigo.xsl" />
     <Content Include="App_Data\XSLTFileDescripcion.xsl" />
     <Content Include="App_Data\HAS.xml" />
@@ -116,11 +120,19 @@
     <Content Include="audios\tieneunnuevofs.wav" />
     <Content Include="CambiarPassword.aspx" />
     <Content Include="Confirmar.aspx" />
+    <Content Include="contraseñaSegura.asmx" />
+    <Content Include="dedicacionesMedias.asmx" />
+    <Content Include="EjemploServiceIker.svc" />
+    <Content Include="EjemploWebServiceIker.asmx" />
     <Content Include="Global.asax" />
     <Content Include="imagenes\giphy %281%29.gif" />
     <Content Include="imagenes\J3xurDF.gif" />
+    <Content Include="imagenes\loading.gif" />
+    <Content Include="imagenes\redTick.gif" />
+    <Content Include="imagenes\tickGreen.gif" />
     <Content Include="imagenes\upv-ehu.gif" />
     <Content Include="LogOut.ascx" />
+    <Content Include="profesor\coordinador.aspx" />
     <Content Include="profesor\Estadisticas.aspx" />
     <Content Include="profesor\ExportarTareas.aspx" />
     <Content Include="imagenes\521cd1a5e0175.jpg" />
@@ -142,11 +154,21 @@
     <Content Include="profesor\InsertarTarea.aspx" />
     <Content Include="alumno\InstanciarTarea.aspx" />
     <Content Include="profesor\Profesor.aspx" />
-    <Content Include="pruebaTUITAH.aspx" />
     <Content Include="Registro.aspx" />
+    <Content Include="My Project\DataSources\System.Data.DataSet.datasource" />
+    <Content Include="Service References\ServiceReferenceCONsvc\EjemploServiceIker.disco" />
+    <Content Include="Service References\ServiceReferenceCONsvc\configuration91.svcinfo" />
+    <Content Include="Service References\ServiceReferenceCONsvc\configuration.svcinfo" />
+    <Content Include="Service References\ServiceReferenceCONsvc\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </Content>
     <Content Include="StyleSheet1.css" />
     <Content Include="profesor\TareasProfesor.aspx" />
     <Content Include="tuita.aspx" />
+    <Content Include="Web References\AccesoServicioUsers\EjemploWebServiceIker.disco" />
+    <Content Include="Web References\comprobarContraseña\contraseñaSegura.disco" />
+    <Content Include="Web References\referenciaServicioDedicaciones\dedicacionesmedias.disco" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -195,15 +217,38 @@
       <DependentUpon>Confirmar.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="contraseñaSegura.asmx.vb">
+      <DependentUpon>contraseñaSegura.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="dedicacionesMedias.asmx.vb">
+      <DependentUpon>dedicacionesMedias.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="EjemploServiceIker.svc.vb">
+      <DependentUpon>EjemploServiceIker.svc</DependentUpon>
+    </Compile>
+    <Compile Include="EjemploWebServiceIker.asmx.vb">
+      <DependentUpon>EjemploWebServiceIker.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="IEjemploServiceIker.vb" />
     <Compile Include="LogOut.ascx.designer.vb">
       <DependentUpon>LogOut.ascx</DependentUpon>
     </Compile>
     <Compile Include="LogOut.ascx.vb">
       <DependentUpon>LogOut.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="profesor\coordinador.aspx.designer.vb">
+      <DependentUpon>coordinador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="profesor\coordinador.aspx.vb">
+      <DependentUpon>coordinador.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="profesor\Estadisticas.aspx.designer.vb">
       <DependentUpon>Estadisticas.aspx</DependentUpon>
@@ -273,13 +318,6 @@
       <DependentUpon>Profesor.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="pruebaTUITAH.aspx.designer.vb">
-      <DependentUpon>pruebaTUITAH.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pruebaTUITAH.aspx.vb">
-      <DependentUpon>pruebaTUITAH.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
     <Compile Include="Registro.aspx.designer.vb">
       <DependentUpon>Registro.aspx</DependentUpon>
     </Compile>
@@ -294,12 +332,33 @@
       <DependentUpon>TareasProfesor.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="Service References\ServiceReferenceCONsvc\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="tuita.aspx.designer.vb">
       <DependentUpon>tuita.aspx</DependentUpon>
     </Compile>
-    <Compile Include="tuita.aspx.vb">
-      <DependentUpon>tuita.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+    <Compile Include="Web References\AccesoServicioUsers\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\comprobarContraseña\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\referenciaServicioDedicaciones\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\servicioComprobarMatricula\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
     </Compile>
     <Compile Include="WebUserControl1.ascx.designer.vb">
       <DependentUpon>WebUserControl1.ascx</DependentUpon>
@@ -335,6 +394,36 @@
     </None>
     <Content Include="packages.config" />
     <Content Include="profesor\Web.config" />
+    <Content Include="Web References\AccesoServicioUsers\EjemploWebServiceIker.wsdl" />
+    <Content Include="Web References\AccesoServicioUsers\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </Content>
+    <Content Include="Service References\ServiceReferenceCONsvc\EjemploServiceIker.wsdl" />
+    <None Include="Service References\ServiceReferenceCONsvc\EjemploServiceIker.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReferenceCONsvc\EjemploServiceIker1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReferenceCONsvc\EjemploServiceIker2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Web References\servicioComprobarMatricula\comprobarmatricula.wsdl" />
+    <Content Include="Web References\servicioComprobarMatricula\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </Content>
+    <Content Include="Web References\referenciaServicioDedicaciones\dedicacionesmedias.wsdl" />
+    <Content Include="Web References\referenciaServicioDedicaciones\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </Content>
+    <Content Include="Web References\comprobarContraseña\contraseñaSegura.wsdl" />
+    <Content Include="Web References\comprobarContraseña\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -342,7 +431,61 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://ehusw.es/jav/ServiciosWeb/comprobarmatricula.php%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\servicioComprobarMatricula\</RelPath>
+      <UpdateFromURL>http://ehusw.es/jav/ServiciosWeb/comprobarmatricula.php%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>lab2__servicioComprobarMatricula_Matriculas</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://hads11asik.azurewebsites.net/contraseñaSegura.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\comprobarContraseña\</RelPath>
+      <UpdateFromURL>http://hads11asik.azurewebsites.net/contraseñaSegura.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>lab2__comprobarContraseña_contraseñaSegura</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://hads11asik.azurewebsites.net/dedicacionesmedias.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\referenciaServicioDedicaciones\</RelPath>
+      <UpdateFromURL>http://hads11asik.azurewebsites.net/dedicacionesmedias.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>lab2__referenciaServicioDedicaciones_dedicacionesMedias</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:4594/EjemploWebServiceIker.asmx%3fop=HelloWorld">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\AccesoServicioUsers\</RelPath>
+      <UpdateFromURL>http://localhost:4594/EjemploWebServiceIker.asmx%3fop=HelloWorld</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>lab2__AccesoServicioUsers_EjemploWebServiceIker</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ServiceReferenceCONsvc\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

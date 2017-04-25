@@ -33,7 +33,7 @@
                 <asp:MenuItem ImageUrl="~/imagenes/rsz_icon3.png" NavigateUrl="~/profesor/Estadisticas.aspx" Text="Estadisticas" Value="Estadisticas"></asp:MenuItem>
                 <asp:MenuItem Text="Asignaturas" Value="Asignaturas" ImageUrl="~/imagenes/rsz_boeken.png"></asp:MenuItem>
                 <asp:MenuItem ImageUrl="~/imagenes/rsz_tareas.png" NavigateUrl="~/profesor/TareasProfesor.aspx" Text="Tareas " Value="Tareas"></asp:MenuItem>
-                <asp:MenuItem ImageUrl="~/imagenes/rsz_social.png" Text="Grupos" Value="Grupos"></asp:MenuItem>
+                <asp:MenuItem ImageUrl="~/imagenes/rsz_social.png" Text="Coordinar" Value="Coordinar" NavigateUrl="~/profesor/coordinador.aspx"></asp:MenuItem>
                 <asp:MenuItem Text="XML" Value="XML" ImageUrl="~/imagenes/rsz_1xml.png">
                     <asp:MenuItem NavigateUrl="~/profesor/ImportarTareasXmlDocument.aspx" Text="Importar XML" Value="Importar XML"></asp:MenuItem>
                     <asp:MenuItem Text="Exportar XML" Value="Exportar XML" NavigateUrl="~/profesor/ExportarTareas.aspx"></asp:MenuItem>

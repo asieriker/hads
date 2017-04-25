@@ -84,4 +84,13 @@ Partial Public Class WebUserControl1
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents ListBox2 As Global.System.Web.UI.WebControls.ListBox
+
+    '''<summary>
+    '''Control Twitter2.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Twitter2 As Global.AjaxControlToolkit.Twitter
 End Class

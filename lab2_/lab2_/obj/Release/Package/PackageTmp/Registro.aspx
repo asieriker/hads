@@ -7,6 +7,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
     <link href="StyleSheet1.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        .auto-style1 {
+            width: 33px;
+            height: 39px;
+        }
+        </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -14,13 +20,29 @@
     
         Registrar usuario:<br />
         <br />
-    
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <ContentTemplate>
         Correo:
-        <asp:TextBox ID="correo" runat="server"></asp:TextBox>
+        <asp:TextBox ID="correo" runat="server" AutoPostBack="True"></asp:TextBox>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="correo" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
 &nbsp;
         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="correo" ErrorMessage="Introduce un email válido" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
-        <br />
+        &nbsp;&nbsp;
+
+
+                <br />
+                <asp:UpdateProgress ID="UpdateProgress1" runat="server">
+                    <ProgressTemplate>
+                        <img alt="" class="auto-style1" src="imagenes/loading.gif" />
+                    </ProgressTemplate>
+                </asp:UpdateProgress>
+                <asp:Label ID="Label2" runat="server"></asp:Label>
+                <asp:Image   ImageUrl="imagenes/tickGreen.gif" runat="server" ID="tickGreen" Height="44px" Visible="False" Width="46px"/>
+                <asp:Image   ImageUrl="imagenes/redTick.gif" runat="server" ID="redTick" Height="44px" Visible="False" Width="46px"/>
+
+
         <br />
         Nombre:
         <asp:TextBox ID="nombre" runat="server"></asp:TextBox>
@@ -41,9 +63,15 @@
         <br />
         <br />
         Password:
-        <asp:TextBox ID="password1" runat="server" TextMode="Password"></asp:TextBox>
+        <asp:TextBox ID="password1" runat="server"  AutoPostBack="True"></asp:TextBox>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="password1" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
-&nbsp;&nbsp; Repita Password:&nbsp;&nbsp;
+&nbsp;&nbsp; 
+            <asp:Image   ImageUrl="imagenes/tickGreen.gif" runat="server" ID="tickGreen2" Height="44px" Visible="False" Width="46px"/>
+            <asp:Image   ImageUrl="imagenes/redTick.gif" runat="server" ID="redTick2" Height="44px" Visible="False" Width="46px"/>
+        </ContentTemplate>
+        </asp:UpdatePanel>
+        <br />
+        Repita Password:&nbsp;&nbsp;
         <asp:TextBox ID="password2" runat="server" TextMode="Password"></asp:TextBox>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="password2" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
 &nbsp;

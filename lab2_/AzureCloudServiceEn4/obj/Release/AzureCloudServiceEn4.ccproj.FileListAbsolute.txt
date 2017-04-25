@@ -1,0 +1,8 @@
+C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\AzureCloudServiceEn4\bin\Release\ServiceConfiguration.cscfg
+C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\AzureCloudServiceEn4\bin\Release\ServiceDefinition.csdef
+C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\AzureCloudServiceEn4\obj\Release\WebServiceEn35\bin\WebServiceEn35.dll
+C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\AzureCloudServiceEn4\obj\Release\WebServiceEn35\bin\WebServiceEn35.pdb
+C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\AzureCloudServiceEn4\obj\Release\WebServiceEn35\bin\WebServiceEn35.xml
+C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\AzureCloudServiceEn4\bin\Release\ValidationIssues.xml
+C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\AzureCloudServiceEn4\obj\Release\WebServiceEn35\Service1.asmx
+C:\Users\iker5\Desktop\2CUATRI\HADS\lab2\lab2_\AzureCloudServiceEn4\obj\Release\WebServiceEn35\Web.config

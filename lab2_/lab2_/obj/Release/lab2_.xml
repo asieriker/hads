@@ -6,7 +6,27 @@ lab2_
 </name>
 </assembly>
 <members>
-<member name="F:lab2_.Inicio.form1">
+<member name="M:lab2_.comprobarContraseña.contraseñaSegura.#ctor">
+	<remarks/>
+</member><member name="E:lab2_.comprobarContraseña.contraseñaSegura.esSeguraCompleted">
+	<remarks/>
+</member><member name="M:lab2_.comprobarContraseña.contraseñaSegura.esSegura(System.String)">
+	<remarks/>
+</member><member name="M:lab2_.comprobarContraseña.contraseñaSegura.esSeguraAsync(System.String)">
+	<remarks/>
+</member><member name="M:lab2_.comprobarContraseña.contraseñaSegura.esSeguraAsync(System.String,System.Object)">
+	<remarks/>
+</member><member name="M:lab2_.comprobarContraseña.contraseñaSegura.CancelAsync(System.Object)">
+	<remarks/>
+</member><member name="T:lab2_.comprobarContraseña.contraseñaSegura">
+	<remarks/>
+</member><member name="T:lab2_.comprobarContraseña.esSeguraCompletedEventHandler">
+	<remarks/>
+</member><member name="P:lab2_.comprobarContraseña.esSeguraCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:lab2_.comprobarContraseña.esSeguraCompletedEventArgs">
+	<remarks/>
+</member><member name="F:lab2_.Inicio.form1">
 	<summary>
 Control form1.
 </summary>
@@ -110,38 +130,6 @@ Control WebUserControl11.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:lab2_.pruebaTUITAH.form1">
-	<summary>
-Control form1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:lab2_.pruebaTUITAH.ScriptManager1">
-	<summary>
-Control ScriptManager1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:lab2_.pruebaTUITAH.UpdatePanel1">
-	<summary>
-Control UpdatePanel1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:lab2_.pruebaTUITAH.Twitter1">
-	<summary>
-Control Twitter1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
 </member><member name="F:lab2_.Estadisticas.form1">
 	<summary>
 Control form1.
@@ -222,6 +210,26 @@ Control Panel1.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
+</member><member name="M:lab2_.AccesoServicioUsers.EjemploWebServiceIker.#ctor">
+	<remarks/>
+</member><member name="E:lab2_.AccesoServicioUsers.EjemploWebServiceIker.HelloWorldCompleted">
+	<remarks/>
+</member><member name="M:lab2_.AccesoServicioUsers.EjemploWebServiceIker.HelloWorld">
+	<remarks/>
+</member><member name="M:lab2_.AccesoServicioUsers.EjemploWebServiceIker.HelloWorldAsync">
+	<remarks/>
+</member><member name="M:lab2_.AccesoServicioUsers.EjemploWebServiceIker.HelloWorldAsync(System.Object)">
+	<remarks/>
+</member><member name="M:lab2_.AccesoServicioUsers.EjemploWebServiceIker.CancelAsync(System.Object)">
+	<remarks/>
+</member><member name="T:lab2_.AccesoServicioUsers.EjemploWebServiceIker">
+	<remarks/>
+</member><member name="T:lab2_.AccesoServicioUsers.HelloWorldCompletedEventHandler">
+	<remarks/>
+</member><member name="P:lab2_.AccesoServicioUsers.HelloWorldCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:lab2_.AccesoServicioUsers.HelloWorldCompletedEventArgs">
+	<remarks/>
 </member><member name="F:lab2_.Alumno.form1">
 	<summary>
 Control form1.
@@ -670,6 +678,26 @@ Control LinkButton1.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
+</member><member name="M:lab2_.servicioComprobarMatricula.Matriculas.#ctor">
+	<remarks/>
+</member><member name="E:lab2_.servicioComprobarMatricula.Matriculas.comprobarCompleted">
+	<remarks/>
+</member><member name="M:lab2_.servicioComprobarMatricula.Matriculas.comprobar(System.String)">
+	<remarks/>
+</member><member name="M:lab2_.servicioComprobarMatricula.Matriculas.comprobarAsync(System.String)">
+	<remarks/>
+</member><member name="M:lab2_.servicioComprobarMatricula.Matriculas.comprobarAsync(System.String,System.Object)">
+	<remarks/>
+</member><member name="M:lab2_.servicioComprobarMatricula.Matriculas.CancelAsync(System.Object)">
+	<remarks/>
+</member><member name="T:lab2_.servicioComprobarMatricula.Matriculas">
+	<remarks/>
+</member><member name="T:lab2_.servicioComprobarMatricula.comprobarCompletedEventHandler">
+	<remarks/>
+</member><member name="P:lab2_.servicioComprobarMatricula.comprobarCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:lab2_.servicioComprobarMatricula.comprobarCompletedEventArgs">
+	<remarks/>
 </member><member name="F:lab2_.tuita.form1">
 	<summary>
 Control form1.
@@ -681,6 +709,62 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 </member><member name="F:lab2_.LogOut.LinkButton2">
 	<summary>
 Control LinkButton2.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:lab2_.coordinador.form1">
+	<summary>
+Control form1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:lab2_.coordinador.Panel1">
+	<summary>
+Control Panel1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:lab2_.coordinador.LogOut1">
+	<summary>
+Control LogOut1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:lab2_.coordinador.DropDownList1">
+	<summary>
+Control DropDownList1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:lab2_.coordinador.SqlDataSource1">
+	<summary>
+Control SqlDataSource1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:lab2_.coordinador.Label1">
+	<summary>
+Control Label1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:lab2_.coordinador.LinkButton1">
+	<summary>
+Control LinkButton1.
 </summary>
 	<remarks>
 Campo generado automáticamente.
@@ -745,6 +829,14 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 </member><member name="F:lab2_.WebUserControl1.ListBox2">
 	<summary>
 Control ListBox2.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:lab2_.WebUserControl1.Twitter2">
+	<summary>
+Control Twitter2.
 </summary>
 	<remarks>
 Campo generado automáticamente.
@@ -1382,6 +1474,22 @@ Control form1.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
+</member><member name="F:lab2_.Registro.ScriptManager1">
+	<summary>
+Control ScriptManager1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:lab2_.Registro.UpdatePanel1">
+	<summary>
+Control UpdatePanel1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
 </member><member name="F:lab2_.Registro.correo">
 	<summary>
 Control correo.
@@ -1401,6 +1509,38 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 </member><member name="F:lab2_.Registro.RegularExpressionValidator1">
 	<summary>
 Control RegularExpressionValidator1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:lab2_.Registro.UpdateProgress1">
+	<summary>
+Control UpdateProgress1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:lab2_.Registro.Label2">
+	<summary>
+Control Label2.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:lab2_.Registro.tickGreen">
+	<summary>
+Control tickGreen.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:lab2_.Registro.redTick">
+	<summary>
+Control redTick.
 </summary>
 	<remarks>
 Campo generado automáticamente.
@@ -1494,6 +1634,22 @@ Control RequiredFieldValidator5.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
+</member><member name="F:lab2_.Registro.tickGreen2">
+	<summary>
+Control tickGreen2.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:lab2_.Registro.redTick2">
+	<summary>
+Control redTick2.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
 </member><member name="F:lab2_.Registro.password2">
 	<summary>
 Control password2.
@@ -1574,6 +1730,26 @@ Control Label1.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
+</member><member name="M:lab2_.referenciaServicioDedicaciones.dedicacionesMedias.#ctor">
+	<remarks/>
+</member><member name="E:lab2_.referenciaServicioDedicaciones.dedicacionesMedias.getMediaCompleted">
+	<remarks/>
+</member><member name="M:lab2_.referenciaServicioDedicaciones.dedicacionesMedias.getMedia(System.String)">
+	<remarks/>
+</member><member name="M:lab2_.referenciaServicioDedicaciones.dedicacionesMedias.getMediaAsync(System.String)">
+	<remarks/>
+</member><member name="M:lab2_.referenciaServicioDedicaciones.dedicacionesMedias.getMediaAsync(System.String,System.Object)">
+	<remarks/>
+</member><member name="M:lab2_.referenciaServicioDedicaciones.dedicacionesMedias.CancelAsync(System.Object)">
+	<remarks/>
+</member><member name="T:lab2_.referenciaServicioDedicaciones.dedicacionesMedias">
+	<remarks/>
+</member><member name="T:lab2_.referenciaServicioDedicaciones.getMediaCompletedEventHandler">
+	<remarks/>
+</member><member name="P:lab2_.referenciaServicioDedicaciones.getMediaCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:lab2_.referenciaServicioDedicaciones.getMediaCompletedEventArgs">
+	<remarks/>
 </member><member name="P:lab2_.My.MyWebExtension.Computer">
 	<summary>
  Devuelve información sobre el equipo host.

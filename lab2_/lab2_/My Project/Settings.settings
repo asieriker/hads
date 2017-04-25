@@ -1,7 +1,18 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" UseMySettingsClassName="true">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="lab2__AccesoServicioUsers_EjemploWebServiceIker" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:4594/EjemploWebServiceIker.asmx</Value>
+    </Setting>
+    <Setting Name="lab2__servicioComprobarMatricula_Matriculas" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://ehusw.es/jav/ServiciosWeb/comprobarmatricula.php</Value>
+    </Setting>
+    <Setting Name="lab2__referenciaServicioDedicaciones_dedicacionesMedias" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://hads11asik.azurewebsites.net/dedicacionesmedias.asmx</Value>
+    </Setting>
+    <Setting Name="lab2__comprobarContraseña_contraseñaSegura" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://hads11asik.azurewebsites.net/contrase%C3%B1aSegura.asmx</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>

@@ -90,7 +90,7 @@
            <asp:Button ID="Button2" runat="server" Text="Insertar nueva tarea" Height="50px" style="margin-top: 0px" PostBackUrl="~/profesor/InsertarTarea.aspx" />
         <asp:LinkButton ID="LinkButton2" runat="server" style="z-index: 1; left: 46px; top: 44px; position: absolute">Cerrar Sesión</asp:LinkButton>
         <p>
-            <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/Profesor.aspx">Volver</asp:LinkButton>
+            <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/profesor/Profesor.aspx">Volver</asp:LinkButton>
         </p>
     </form>
 </body>

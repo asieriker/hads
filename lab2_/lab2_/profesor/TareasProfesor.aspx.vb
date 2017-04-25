@@ -15,4 +15,8 @@
     Protected Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
 
     End Sub
+
+    Protected Sub DropDownList1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles DropDownList1.SelectedIndexChanged
+
+    End Sub
 End Class

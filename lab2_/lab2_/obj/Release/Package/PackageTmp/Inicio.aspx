@@ -25,6 +25,7 @@
             left: 25px;
             top: 23px;
             position: absolute;
+            right: 1222px;
         }
         .auto-style3 {
             text-align: center;
@@ -85,6 +86,8 @@
                 <uc1:WebUserControl1 ID="WebUserControl11" runat="server" />
 
         <p>
+            &nbsp;
+
         </p>
         <p class="auto-style3">
             &nbsp;</p>

@@ -23,7 +23,9 @@
 
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:ListBox ID="ListBox2" runat="server"></asp:ListBox>
-
+        <ajaxToolkit:Twitter ID="Twitter2"  Mode="Profile"
+            ScreenName="dotnetlogix" runat="server">
+        </ajaxToolkit:Twitter>
     </ContentTemplate>
 </asp:UpdatePanel>
 
